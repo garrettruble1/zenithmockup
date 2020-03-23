@@ -1,0 +1,554 @@
+/* ========= VARIABLES ========= */
+
+$mainpurple: #305DFF;
+$secondarypurple: #C10FFF;
+$maingradient: linear-gradient(30deg, $mainpurple 30%, $secondarypurple 125%);
+$textgradient: -webkit-linear-gradient(30deg, $mainpurple 30%, $secondarypurple 125%);
+$standardshadow: 1px 1px 15px rgba(0, 0, 0, 0.24);
+$largeshadow: 1px 1px 25px rgba(0, 0, 0, 0.25);
+$featuresshadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
+$smallspace: 10px;
+$medspace: 25px;
+$largespace: 40px;
+
+@font-face {
+    font-family: 'FuturaBook';
+    src: url('fonts/futura-book.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'FuturaHeavy';
+    src: url('fonts/futura-heavy.ttf') format('truetype');
+}
+
+
+
+/* ========= CONTAINERS ========= */
+
+.flex-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+/* ===== GLOBAL SELECTORS ===== */
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'FuturaBook';
+}
+
+
+
+/* ===========================================================================================================================
+========================================================== MOBILE =========================================================== 
+===========================================================================================================================*/
+
+/* === NAVIGATION === */
+
+.logo {
+    width: 50%;
+    margin: $medspace;
+}
+
+.menu {
+    display: none;
+}
+
+.mobilemenu {
+    display: block;
+    margin: $medspace;
+    width: $largespace;
+}
+
+/* === HERO SECTION === */
+
+.tagline {
+    font-size: 150%;
+    font-family: "FuturaHeavy";
+    width: 50%;
+    padding: $largespace $smallspace;
+    margin-left: $smallspace;
+}
+
+.hero-bg1 {
+    margin-bottom: $largespace;
+    min-height: 20em;
+    width: 100%;
+    background: white url("images/backgrounds/hero-bg-texture.png") no-repeat top;
+    background-size: 125% 140%;
+    object-fit: cover;
+}
+
+.hero-image {
+    width: 90%;
+    margin: 0 0 10% 5%;
+    border-radius: 5px;
+    box-shadow: $largeshadow;
+}
+
+/* === FEATURES === */
+
+.card-text {
+    font-size: 115%;
+    padding: 10px 0;
+    max-width: 65%
+}
+
+.card-img {
+    width: 5%;
+}
+
+.dashboard-img {
+    width: 90%;
+    margin: 5%;
+    box-shadow: $largeshadow;
+    border-radius: 10px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 2fr;
+    justify-items: center;
+    grid-template-areas:
+    "cell1"
+    "cell2"
+    "cell3"
+    "cell4"
+    "cell5";
+
+}
+
+.cell1 {
+    grid-area: cell1;
+}
+
+.cell2 {
+    grid-area: cell2;
+}
+
+.cell3 {
+    grid-area: cell3;
+}
+
+.cell4 {
+    grid-area: cell4;
+}
+
+.cell5 {
+    grid-area: cell5;
+}
+
+.cell6 {
+    grid-area: cell6;
+}
+
+.features-tagline {
+    font-size: 150%;
+    font-family: "FuturaHeavy";
+    background: $textgradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: $largespace;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.feature-card {
+    height: 110px;
+    margin: 1em 5%;
+    box-shadow: $featuresshadow;
+    border-radius: 7px;
+}
+
+/* === PRODUCTS === */
+
+.products-tagline {
+    font-size: 150%;
+    font-family: "FuturaHeavy";
+    background: $textgradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: $medspace;
+    margin-bottom: $largespace;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    grid-column-gap: 5px;
+    grid-template-areas: 
+    "cell1 cell1"
+    "cell2 cell3"
+    "cell6 cell5"
+    "cell4 cell4";
+    margin-bottom: $largespace;
+}
+
+.product-img {
+    width: 65%;
+}
+
+.asana {
+    width: 40%;
+}
+
+
+
+/* === FORM === */
+
+.footer-bg1 {
+    background: $maingradient;
+    background-size: cover;
+}
+
+.footer-bg2 {
+    background: url("images/backgrounds/footer-bg-texture.png") no-repeat center;
+    background-size: contain;
+}
+
+.form-tagline {
+    font-family: "FuturaHeavy";
+    font-size: 2.5em;
+    color: white;
+    padding: $smallspace;
+    padding-top: $largespace;
+}
+
+.mobile-form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.signup {
+    width: 95%;
+    margin: 2.5%;
+}
+
+.signup-item {
+    width: 60%;
+    background-color: #A082F7;
+    padding: $smallspace;
+    padding-left: $medspace;
+    margin: $smallspace;
+    border-radius: 35px;
+    border: none;
+}
+
+.signup-item::placeholder {
+    font-size: 1.2em;
+    color: white;
+    font-family: "FuturaHeavy";
+    -webkit-appearance: none;
+    opacity: 0.6;
+}
+
+.select-default {
+    display: none;
+}
+
+.signup-name {
+    display: none;
+}
+
+.signup-button {
+    width: 30%;
+    margin: $smallspace;
+    padding: $smallspace;
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 35px;
+    font-family: "FuturaHeavy";
+    background-color: white;
+}
+
+.download {
+    display: block;
+}
+
+.form-signup {
+    display: none;
+}
+
+
+
+/* === SUBNAVIGATION === */
+
+.submenu {
+    margin-top: 7em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    list-style-type: none;
+
+    &__item {
+        margin: $smallspace;
+
+        &--plain {
+            text-decoration: none;
+            color: white;
+            font-family: "FuturaHeavy";
+            font-kerning: 5px;
+        }
+    }
+}
+
+
+/* =========================================================================================================================
+======================================================== DESKTOP ========================================================== 
+========================================================================================================================= */
+
+@media (min-width: 787px) {
+
+/* === NAVIGATION === */
+
+body {
+    width: 100%;
+}
+
+.logo {
+    width: 25%;
+    margin: $largespace;
+}
+
+.mobilemenu {
+    display: none;
+}
+
+.menu {
+    display: flex;
+    list-style-type: none;
+
+    &__item {
+        margin: $smallspace;
+
+        &--plain {
+            text-decoration: none;
+            color: black;
+            font-size: 0.75em;
+            font-family: "FuturaHeavy";
+        }
+    }
+}
+
+.cta-button {
+    background: $maingradient;
+    padding: 7px 20px;
+    width: 5rem;
+    text-align: center;
+    border-radius: 100px;
+    box-shadow: $standardshadow;
+
+    &__text {
+        color: white;
+    }
+}
+
+/* === HERO SECTION === */
+
+.tagline {
+    font-family: "FuturaHeavy";
+    font-size: 250%;
+    width: 45%;
+    padding: $smallspace 0 0 $largespace;
+}
+
+.hero-bg1 {
+    display: block;
+    min-height: 40em;
+    width: 100%;
+    background: white url("images/backgrounds/hero-bg-texture.png") no-repeat center;
+    background-size: cover;
+    object-fit: cover;
+}
+
+.hero-bg2 {
+    background: url("images/backgrounds/hero-bg-cards.png") no-repeat top;
+    background-size: cover;
+    position: absolute;
+    object-fit: cover;
+}
+
+.hero-image {
+    width: 50%;
+    margin: 0 0 0 25%;
+    border-radius: 5px;
+    box-shadow: $largeshadow;
+}
+
+/* === FEATURES === */
+
+.card-text {
+    font-size: 110%;
+    padding: 10px 0;
+    max-width: 65%
+}
+
+.feature-card {
+    margin: 1em 5%;
+    box-shadow: $featuresshadow;
+    border-radius: 7px;
+}
+
+.features-grid {
+    padding: $largespace;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 3fr;
+    grid-column-gap: 5px;
+    justify-items: center;
+    grid-template-areas:
+    "cell1 cell1 cell1"
+    "cell2 cell3 cell4"
+    "cell5 cell5 cell5";
+
+}
+
+.cell1 {
+    grid-area: cell1;
+}
+
+.cell2 {
+    grid-area: cell2;
+}
+
+.cell3 {
+    grid-area: cell3;
+}
+
+.cell4 {
+    grid-area: cell4;
+}
+
+.cell5 {
+    grid-area: cell5;
+}
+
+
+.features-tagline {
+    font-size: 250%;
+}
+
+
+
+/* === PRODUCTS === */
+
+.products-tagline {
+    font-size: 250%;
+}
+
+.products-grid {
+    margin: $smallspace;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas: 
+    ". cell1 cell1 cell1 ."
+    "cell2 cell3 cell4 cell5 cell6";
+}
+
+.asana {
+    width: 60%;
+}
+
+
+
+/* === FORM === */
+
+.mobile-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup {
+    width: 95%;
+    margin: 2.5%;
+}
+
+.signup-item {
+    width: 30%;
+    background-color: #A082F7;
+    padding: $smallspace;
+    padding-left: $medspace;
+    margin: $smallspace;
+    border-radius: 35px;
+    border: none;
+}
+
+.signup-item::placeholder {
+    font-size: 1.2em;
+    color: white;
+    font-family: "FuturaHeavy";
+    -webkit-appearance: none;
+    opacity: 0.6;
+}
+
+.select-default {
+    display: inline-block;
+    width: 33.5%;
+    padding: $smallspace;
+    padding-left: $medspace;
+    font-family: "FuturaHeavy";
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.6);
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.signup-name {
+    display: inline-block;
+}
+
+.download {
+    display: none;
+}
+
+.form-signup {
+    display: block;
+    width: 15%;
+}
+
+
+
+/* === SUBNAVIGATION === */
+
+.submenu {
+    margin: $largespace;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    list-style-type: none;
+
+    &__item {
+        margin: 3px;
+
+        &--plain {
+            text-decoration: none;
+            color: white;
+            font-family: "FuturaHeavy";
+        }
+    }
+}
+
+}
